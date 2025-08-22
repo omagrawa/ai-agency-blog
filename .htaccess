@@ -1,0 +1,17 @@
+# Pretty URLs for /blog
+Options -MultiViews
+RewriteEngine On
+
+# If a file or directory exists, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route RSS
+RewriteRule ^feed/?$ feed.php [L,QSA]
+
+# Route post slugs: /blog/my-post -> post.php?slug=my-post
+RewriteRule ^([A-Za-z0-9-]+)/?$ post.php?slug=$1 [L,QSA]
+
+# Fallback to index
+DirectoryIndex index.php
