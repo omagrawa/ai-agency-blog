@@ -4,14 +4,16 @@
     <li><a href="{{ '/' | relative_url }}">Home</a></li>
     {% capture path %}{% endcapture %}
     {% for crumb in crumbs %}
-      {% capture path %}{{ path }}/{{ crumb }}{% endcapture %}
-      <li>
-        {% if forloop.last %}
-          <span aria-current="page">{{ page.title | default: crumb | replace: '-', ' ' | capitalize }}</span>
-        {% else %}
-          <a href="{{ path | relative_url }}">{{ crumb | replace: '-', ' ' | capitalize }}</a>
-        {% endif %}
-      </li>
+      {% unless crumb == '' or crumb == nil %}
+        {% capture path %}{{ path }}/{{ crumb }}{% endcapture %}
+        <li>
+          {% if forloop.last %}
+            <span aria-current="page">{{ page.title | default: crumb | replace: '-', ' ' | capitalize }}</span>
+          {% else %}
+            <a href="{{ path | relative_url }}">{{ crumb | replace: '-', ' ' | capitalize }}</a>
+          {% endif %}
+        </li>
+      {% endunless %}
     {% endfor %}
   </ol>
 </nav>
