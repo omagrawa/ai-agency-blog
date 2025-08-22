@@ -1,6 +1,7 @@
-title: "ripple.ai Blog"
-description: "AI automation, chatbots, and lead generation insights from SMS Idea."
-url: "https://ripple.ai" # update if using subdomain
+title: "SMS Idea Blog"
+description: "AI agency blog for growth, automation and chatbots"
+logo: /assets/images/logo.svg
+url: "https://blog.smsidea.in"
 baseurl: "" # no trailing slash
 
 author:

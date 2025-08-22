@@ -1,7 +1,13 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" role="banner" aria-label="Primary">
   <div class="container header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title | default: site.data.site.brand }}</a>
+    <a class="brand" href="{{ '/' | relative_url }}">
+      {% if site.logo %}
+        <img src="{{ site.logo | relative_url }}" alt="{{ site.data.site.brand | default: site.title }} logo">
+      {% else %}
+        {{ site.title | default: site.data.site.brand }}
+      {% endif %}
+    </a>
     <nav class="site-nav" role="navigation" aria-label="Main Navigation">
       <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul id="menu">
