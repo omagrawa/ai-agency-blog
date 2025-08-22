@@ -5,6 +5,83 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
 a{color:var(--link);text-decoration:none}a:focus{outline:2px solid currentColor;outline-offset:2px}
 .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+.hero {
+	background: linear-gradient(120deg, #e0e7ff 0%, #f7f7f7 100%);
+	padding: 3rem 0 2rem 0;
+	text-align: center;
+	border-radius: 0 0 2rem 2rem;
+	margin-bottom: 2rem;
+}
+.hero-title {
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-bottom: 0.5rem;
+	color: #222;
+}
+.hero-desc {
+	color: #555;
+	font-size: 1.2rem;
+	max-width: 600px;
+	margin: 0 auto 1.5rem auto;
+}
+.post {
+	background: var(--card);
+	box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+	border-radius: 1.2rem;
+	padding: 2.5rem 2rem 2rem 2rem;
+	margin-bottom: 2.5rem;
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	transition: box-shadow 0.2s;
+}
+.post:hover {
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.12);
+}
+.post-header h1 {
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+.post-header .meta {
+	color: var(--muted);
+	font-size: 1rem;
+	margin-bottom: 1.5rem;
+}
+.content {
+	font-size: 1.13rem;
+	line-height: 1.8;
+	color: var(--fg);
+}
+.content h2, .content h3 {
+	margin-top: 2.2rem;
+	font-weight: 700;
+	color: #0a66c2;
+}
+.content img {
+	border-radius: 0.7rem;
+	margin: 1.5rem 0;
+	box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+}
+.content ul, .content ol {
+	margin-left: 2rem;
+	margin-bottom: 1.5rem;
+}
+.content li {
+	margin-bottom: 0.5rem;
+}
+.btn-primary {
+	background: #0a66c2;
+	color: #fff;
+	padding: 0.7rem 1.3rem;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	box-shadow: 0 2px 8px 0 rgba(10,102,194,0.08);
+	transition: background 0.2s;
+}
+.btn-primary:hover {
+	background: #084b8a;
+}
 .site-header{border-bottom:1px solid #e5e5e5;background:var(--bg);position:sticky;top:0;z-index:10}
 .header-inner{display:flex;align-items:center;gap:1rem;padding:.75rem 0}
 .brand{font-weight:700;display:flex;align-items:center}

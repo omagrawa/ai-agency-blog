@@ -1,6 +1,12 @@
 ---
 layout: base
 ---
+<div class="hero">
+  <div class="hero-title">{{ page.title }}</div>
+  <div class="hero-desc">
+    {% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 180 }}{% else %}{{ site.description }}{% endif %}
+  </div>
+</div>
 <article class="post">
   {% include breadcrumbs.html %}
   <header class="post-header">
