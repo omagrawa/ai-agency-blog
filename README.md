@@ -1,4 +1,4 @@
-# smsidea.in Blog (Jekyll on GitHub Pages)
+# ripple.ai Blog (Jekyll on GitHub Pages)
 
 Production-ready, modular blog for SMS Idea. Stack: Jekyll (GitHub Pages), vanilla CSS, no custom plugins.
 
@@ -45,7 +45,7 @@ Edit `_data/nav.yml` to control header/footer menus. Use `nav_weight` in page fr
 - Add your Measurement ID in `_config.yml` as `ga4_id`
 
 ## Domain
-- Keep `CNAME` with `smsidea.in` or `blog.smsidea.in`
+- Keep `CNAME` with `ripple.ai` or `blog.ripple.ai`
 - GitHub → Settings → Pages → Deploy from a branch → `main` / `(root)`
 - Enable "Enforce HTTPS" after certificate is issued
 

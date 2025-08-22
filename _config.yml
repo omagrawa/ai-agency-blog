@@ -1,17 +1,22 @@
-title: "smsidea.in Blog"
+title: "ripple.ai Blog"
 description: "AI automation, chatbots, and lead generation insights from SMS Idea."
-url: "https://smsidea.in" # update if using subdomain
+url: "https://ripple.ai" # update if using subdomain
 baseurl: "" # no trailing slash
 
 author:
   name: "SMS Idea"
-  email: "contact@smsidea.in"
+  email: "contact@ripple.ai"
 
 social:
   twitter: "smsideain"
   linkedin: "company/smsidea"
 
 permalink: pretty
+
+# Internationalization (no plugins)
+default_lang: en
+languages: [en, hi]
+enable_translate_widget: true
 
 collections:
   case_studies:

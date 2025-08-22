@@ -14,5 +14,7 @@
     {% if site.enable_darkmode %}
     <button class="theme-toggle" aria-label="Toggle dark mode">🌓</button>
     {% endif %}
+    {% include lang-switcher.html %}
+    {% if site.enable_translate_widget %}{% include translate-widget.html %}{% endif %}
   </div>
 </header>

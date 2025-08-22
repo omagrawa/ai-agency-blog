@@ -12,6 +12,11 @@
 <meta name="twitter:title" content="{{ page_title }}" />
 <meta name="twitter:description" content="{{ page_desc }}" />
 <meta name="twitter:image" content="{{ page.hero_image | default: '/assets/images/og-default.jpg' | absolute_url }}" />
+{% if page.translations %}
+  {% for code,path in page.translations %}
+    <link rel="alternate" hreflang="{{ code }}" href="{{ path | absolute_url }}" />
+  {% endfor %}
+{% endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
