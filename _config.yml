@@ -15,7 +15,7 @@ permalink: pretty
 
 # Internationalization (no plugins)
 default_lang: en
-languages: [en, hi]
+languages: [en, hi, fr, es]
 enable_translate_widget: true
 
 collections:
