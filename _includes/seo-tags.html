@@ -13,7 +13,9 @@
 <meta name="twitter:description" content="{{ page_desc }}" />
 <meta name="twitter:image" content="{{ page.hero_image | default: '/assets/images/og-default.jpg' | absolute_url }}" />
 {% if page.translations %}
-  {% for code,path in page.translations %}
+  {% for pair in page.translations %}
+    {% assign code = pair[0] %}
+    {% assign path = pair[1] %}
     <link rel="alternate" hreflang="{{ code }}" href="{{ path | absolute_url }}" />
   {% endfor %}
 {% endif %}
