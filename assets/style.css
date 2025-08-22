@@ -1,4 +1,165 @@
-:root{--bg:#0f1113;--text:#e9edf1;}
+/* Elegant Modern Theme for AI Agency Blog */
+:root {
+	--primary: #3a86ff;
+	--secondary: #8338ec;
+	--accent: #ffbe0b;
+	--background: #f8f9fa;
+	--surface: #fff;
+	--text: #22223b;
+	--muted: #adb5bd;
+	--radius: 1.2rem;
+	--shadow: 0 4px 24px rgba(60,60,100,0.08);
+}
+
+body {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: var(--background);
+	color: var(--text);
+	margin: 0;
+	line-height: 1.7;
+	font-size: 1.08rem;
+}
+
+a {
+	color: var(--primary);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+a:hover {
+	color: var(--secondary);
+}
+
+header, footer {
+	background: var(--surface);
+	box-shadow: var(--shadow);
+	border-radius: 0 0 var(--radius) var(--radius);
+	padding: 1.5rem 0.5rem;
+	margin-bottom: 2rem;
+}
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+	background: var(--surface);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 2.5rem 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	font-weight: 700;
+	color: var(--primary);
+	margin-top: 2.2rem;
+	margin-bottom: 1rem;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+button, .btn {
+	background: linear-gradient(90deg, var(--primary), var(--secondary));
+	color: #fff;
+	border: none;
+	border-radius: var(--radius);
+	padding: 0.7em 1.5em;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(60,60,100,0.08);
+	transition: background 0.2s, box-shadow 0.2s;
+}
+button:hover, .btn:hover {
+	background: linear-gradient(90deg, var(--secondary), var(--primary));
+	box-shadow: 0 4px 16px rgba(60,60,100,0.12);
+}
+
+.card {
+	background: var(--surface);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 2rem 1.5rem;
+	margin-bottom: 2rem;
+	transition: box-shadow 0.2s;
+}
+.card:hover {
+	box-shadow: 0 8px 32px rgba(60,60,100,0.14);
+}
+
+.muted {
+	color: var(--muted);
+}
+
+nav {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+input, textarea, select {
+	border: 1px solid var(--muted);
+	border-radius: var(--radius);
+	padding: 0.7em 1em;
+	font-size: 1rem;
+	margin-bottom: 1.2rem;
+	background: #f6f6fb;
+	transition: border 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+	border: 1.5px solid var(--primary);
+	outline: none;
+}
+
+ul, ol {
+	padding-left: 2rem;
+}
+
+blockquote {
+	border-left: 4px solid var(--primary);
+	background: #f0f4ff;
+	color: var(--secondary);
+	padding: 1rem 1.5rem;
+	margin: 2rem 0;
+	border-radius: var(--radius);
+}
+
+pre, code {
+	background: #f6f6fb;
+	border-radius: var(--radius);
+	padding: 0.2em 0.5em;
+	font-family: 'Fira Mono', 'Consolas', monospace;
+	font-size: 0.98em;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2rem 0;
+}
+th, td {
+	border: 1px solid #e0e0e0;
+	padding: 0.8em 1em;
+	text-align: left;
+}
+th {
+	background: #f0f4ff;
+	color: var(--primary);
+}
+
+@media (max-width: 600px) {
+	main {
+		padding: 1.2rem 0.5rem;
+	}
+	.card {
+		padding: 1.2rem 0.7rem;
+	}
+	nav {
+		flex-direction: column;
+		gap: 0.7rem;
+	}
+}
 html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI}
 .wrap{max-width:720px;margin:12vh auto;padding:24px}
 h1{font-size:2.2rem;margin:0 0 12px}
