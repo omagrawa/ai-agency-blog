@@ -1,8 +1,7 @@
----
 title: "TikTok→WhatsApp→Checkout: The 3-Hop Funnel That Prints Leads"
 date: 2025-08-22
 tags: [lead-generation, guides, automation]
----
+![TikTok → WhatsApp → Checkout: The 3-Hop Funnel That Prints Leads](/assets/images/tiktok-whatsapp-checkout-funnel.png)
 
 
 In today’s digital landscape, capturing leads efficiently is more important than ever. One of the most effective strategies we’ve seen is the “3-hop funnel” that moves users from TikTok to WhatsApp and finally to Checkout. Here’s how it works in detail:
