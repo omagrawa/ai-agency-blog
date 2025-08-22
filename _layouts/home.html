@@ -1,0 +1,54 @@
+---
+layout: base
+---
+<section class="hero">
+  <div class="container">
+    <h1>AI Agents for Growth</h1>
+    <p>Automate leads, conversations, and operations with SMS Idea.</p>
+    <p><a class="btn" href="{{ '/pages/contact/' | relative_url }}">Talk to us</a></p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2>Latest posts</h2>
+    <div class="grid">
+      {% assign posts_list = site.posts | slice: 0, 6 %}
+      {% for post in posts_list %}
+        {% include post-card.html %}
+      {% endfor %}
+    </div>
+    <p><a href="{{ '/blog/' | relative_url }}">View all posts</a></p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2>Featured services</h2>
+    <div class="grid">
+      {% assign services = site.services | slice: 0, 3 %}
+      {% for item in services %}
+        <article class="card">
+          <a href="{{ item.url | relative_url }}" class="card-link">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-excerpt">{{ item.excerpt | strip_html | truncate: 140 }}</p>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2>Recent case studies</h2>
+    <div class="grid">
+      {% assign cases = site.case_studies | slice: 0, 3 %}
+      {% for item in cases %}
+        <article class="card">
+          <a href="{{ item.url | relative_url }}" class="card-link">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-excerpt">{{ item.excerpt | strip_html | truncate: 140 }}</p>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

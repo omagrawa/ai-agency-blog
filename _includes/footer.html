@@ -1,0 +1,13 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <nav aria-label="Footer Navigation">
+      <ul>
+        {% assign items = site.data.nav.footer | sort: 'weight' %}
+        {% for item in items %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.data.site.brand }}. All rights reserved.</p>
+  </div>
+</footer>

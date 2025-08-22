@@ -1,0 +1,5 @@
+{% comment %}Simple pagination without plugin: expects paginator-like vars passed manually if used{% endcomment %}
+<nav class="pagination" role="navigation" aria-label="Pagination">
+  {% if page.prev_url %}<a class="prev" href="{{ page.prev_url | relative_url }}">Previous</a>{% endif %}
+  {% if page.next_url %}<a class="next" href="{{ page.next_url | relative_url }}">Next</a>{% endif %}
+</nav>

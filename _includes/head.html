@@ -1,0 +1,24 @@
+{% include seo-tags.html %}
+<link rel="manifest" href="{{ "/manifest.webmanifest" | relative_url }}">
+<link rel="icon" href="{{ "/favicon.ico" | relative_url }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0a">
+{% if site.enable_darkmode %}
+<script defer src="{{ "/assets/js/theme-toggle.js" | relative_url }}"></script>
+{% endif %}
+{% if site.enable_search %}
+  <script>
+    window.__ENABLE_SEARCH__ = true;
+  </script>
+{% endif %}
+<link rel="preload" as="style" href="{{ "/assets/css/main.css" | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+{% if site.ga4_id and site.ga4_id != '' %}
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', '{{ site.ga4_id }}');
+  </script>
+{% endif %}

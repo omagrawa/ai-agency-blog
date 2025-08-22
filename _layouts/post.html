@@ -1,0 +1,13 @@
+---
+layout: base
+---
+<article class="post">
+  {% include breadcrumbs.html %}
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: '%B %d, %Y' }} • {% if page.tags %}Tags: {% for t in page.tags %}<a href="{{ '/tags/' | relative_url }}{{ t | slugify }}/">#{{ t }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</p>
+  </header>
+  <div class="content">
+    {{ content }}
+  </div>
+</article>

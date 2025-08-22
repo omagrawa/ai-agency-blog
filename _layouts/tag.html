@@ -1,0 +1,14 @@
+---
+layout: base
+---
+<section class="section">
+  <div class="container">
+    <h1>Tag: {{ page.tag }}</h1>
+    <div class="grid">
+      {% assign tagged = site.tags[page.tag] %}
+      {% for post in tagged %}
+        {% include post-card.html %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

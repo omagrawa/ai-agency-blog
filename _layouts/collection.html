@@ -1,0 +1,19 @@
+---
+layout: base
+---
+<article class="collection-item">
+  {% include breadcrumbs.html %}
+  <header>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  </header>
+  <div class="content">
+    {{ content }}
+    {% if page.impact %}
+      <h2>Impact</h2>
+      <ul>
+        {% for i in page.impact %}<li>{{ i }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</article>

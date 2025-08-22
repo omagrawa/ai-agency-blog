@@ -1,0 +1,75 @@
+title: "smsidea.in Blog"
+description: "AI automation, chatbots, and lead generation insights from SMS Idea."
+url: "https://smsidea.in" # update if using subdomain
+baseurl: "" # no trailing slash
+
+author:
+  name: "SMS Idea"
+  email: "contact@smsidea.in"
+
+social:
+  twitter: "smsideain"
+  linkedin: "company/smsidea"
+
+permalink: pretty
+
+collections:
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
+  services:
+    output: true
+    permalink: /services/:name/
+  landing:
+    output: true
+    permalink: /l/:name/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Flags
+enable_search: true
+enable_darkmode: true
+# Set GA4 to your Measurement ID to enable
+ga4_id: ""
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      categories: []
+      tags: []
+      permalink: /blog/:title/
+  - scope:
+      path: "_case_studies"
+      type: case_studies
+    values:
+      layout: collection
+  - scope:
+      path: "_services"
+      type: services
+    values:
+      layout: collection
+  - scope:
+      path: "_landing"
+      type: landing
+    values:
+      layout: page
+  - scope:
+      path: "pages"
+    values:
+      layout: page
+
+paginate: 6 # manual display, not using plugin
+
+exclude:
+  - README.md
+  - node_modules
+  - vendor
+
+sass:
+  style: compressed
