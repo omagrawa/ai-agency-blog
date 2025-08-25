@@ -38,8 +38,10 @@ const BlogPage: React.FC = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <article key={post.slug} className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
-              <div className="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 opacity-70"></div>
+              <div className="h-48 relative overflow-hidden"
+                style={{backgroundImage: `url(${post.image})`, backgroundSize: 'cover', backgroundPosition: 'center'}}
+              >
+                <div className="absolute "></div>
                 {post.category && (
                   <div className="absolute bottom-4 left-4">
                     <span className="inline-block px-3 py-1 text-xs font-medium text-white bg-blue-600 dark:bg-blue-700 rounded-full">

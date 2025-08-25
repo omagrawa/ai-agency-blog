@@ -1,7 +1,21 @@
-import React from 'react';
+import { getSortedPostsData, type PostMetadata } from '@/utils/loadPosts';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
+  const [posts, setPosts] = useState<PostMetadata[]>([]);
+  const [loading, setLoading] = useState(true);
+  
+    useEffect(() => {
+      try {
+        const postsData = getSortedPostsData();
+        setPosts(postsData);
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+      } finally {
+        setLoading(false);
+      }
+    }, []);
   return (
     <div className="fade-in">
       {/* Hero Section */}
@@ -13,8 +27,8 @@ const HomePage: React.FC = () => {
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             Exploring the latest in AI, automation, and technology trends.
           </p>
-          <div className="flex justify-center gap-4">
-            <Link to="/blog" className="btn">
+          <div className="flex justify-center gap-4 " >
+            <Link to="/blog" className="btn bg-black">
               Read Our Blog
             </Link>
           </div>
@@ -26,30 +40,8 @@ const HomePage: React.FC = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">Latest Articles</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'The Future of AI in Business',
-                excerpt: 'Exploring how AI is transforming industries and creating new opportunities.',
-                category: 'AI',
-                date: 'August 25, 2023',
-                readTime: '5 min read'
-              },
-              {
-                title: 'Automation for Startups',
-                excerpt: 'How small businesses can leverage automation to compete with larger enterprises.',
-                category: 'Automation',
-                date: 'August 20, 2023',
-                readTime: '4 min read'
-              },
-              {
-                title: 'Tech Trends 2023',
-                excerpt: 'The most impactful technology trends shaping the future this year.',
-                category: 'Technology',
-                date: 'August 15, 2023',
-                readTime: '6 min read'
-              }
-            ].map((post, index) => (
-              <Link to="/blog/sample-post" key={index} className="group">
+            {posts.map((post, index) => (
+              <Link to={`/blog/${post.slug}`}  key={index} className="group">
                 <div className="card p-6 h-full transition-all duration-300 hover:shadow-lg dark:hover:bg-gray-800">
                   <span className="inline-block px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200 mb-4">
                     {post.category}

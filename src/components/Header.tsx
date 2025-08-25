@@ -22,7 +22,7 @@ const Header: React.FC = () => {
           </Link>
         </nav>
 
-        <div className="flex items-center space-x-4">
+        {/* <div className="flex items-center space-x-4">
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200"
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </header>
   );
