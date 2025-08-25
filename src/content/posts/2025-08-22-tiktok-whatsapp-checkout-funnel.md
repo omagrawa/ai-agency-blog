@@ -4,7 +4,7 @@ date: 2025-08-22
 tags: ["lead-generation", "guides", "automation"]
 category: "Marketing"
 readTime: "6 min read"
-image: "/images/svg/funnel-cover.svg"
+image: "/images/blog/funnel-cover.png"
 ---
 
 <div class="post-intro">

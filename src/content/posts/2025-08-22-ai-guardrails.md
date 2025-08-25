@@ -5,7 +5,7 @@ date: 2025-08-22
 author: "SMS Idea Team"
 category: "AI Engineering"
 readTime: "4 min read"
-image: "/images/svg/ai-guardrails.svg"
+image: "/images/blog/ai-guardrails.png"
 tags: ["ai", "production", "safety", "security", "devops"]
 excerpt: "Discover how to implement enterprise-grade AI safety measures using a powerful combination of regex patterns, custom functions, and specialized monitoring tools."
 ---
