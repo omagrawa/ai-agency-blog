@@ -47,10 +47,6 @@ jobs:
     environment:
       name: github-pages
     steps:
-      - name: Configure Pages (CNAME)
-        uses: actions/configure-pages@v5
-        with:
-          cname: blog.smsidea.in
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
