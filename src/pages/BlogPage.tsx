@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getSortedPostsData, type PostMetadata } from '@/utils/loadPosts';
+import moment from 'moment';
 
 const BlogPage: React.FC = () => {
   const [posts, setPosts] = useState<PostMetadata[]>([]);
@@ -52,7 +53,7 @@ const BlogPage: React.FC = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
-                  <span>{post.date}</span>
+                  <span>{moment(post.date).format('DD-MM-YYYY')}</span>
                   {post.readTime && (
                     <>
                       <span className="mx-2">•</span>

@@ -123,7 +123,7 @@ Ready to implement this high-converting funnel for your business? Here's how to 
 
 <small class="post-footer">
   <strong>Last Updated:</strong> August 22, 2025 | 
-  <strong>Author:</strong> SMS Idea Team | 
+  <strong>Author:</strong> Ripple AI Team | 
   <strong>Category:</strong> Marketing
 </small>
 - **Fast Conversion**: The process is streamlined, moving leads from awareness to action without unnecessary delays.

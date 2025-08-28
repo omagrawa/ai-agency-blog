@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
   const [posts, setPosts] = useState<PostMetadata[]>([]);
-  const [loading, setLoading] = useState(true);
+  // ...existing code...
   
     useEffect(() => {
       try {
@@ -12,8 +12,6 @@ const HomePage: React.FC = () => {
         setPosts(postsData);
       } catch (error) {
         console.error('Error loading blog posts:', error);
-      } finally {
-        setLoading(false);
       }
     }, []);
   return (

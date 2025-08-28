@@ -1,7 +1,7 @@
 ---
 title: "AI-Powered SEO: A Practical Playbook for Smart Marketers"
 date: 2025-08-25
-author: "SMS Idea Team"
+author: "Ripple AI Team"
 category: "SEO"
 readTime: "5 min read"
 image: "/images/blog/ai-seo-playbook.png"

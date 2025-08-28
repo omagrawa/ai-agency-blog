@@ -1,7 +1,7 @@
 ---
 title: "From Canned Replies to AI-Powered Smart Actions: A Guide for Support Teams"
 date: 2025-08-25
-author: "SMS Idea Team"
+author: "Ripple AI Team"
 category: "Customer Support"
 readTime: "4 min read"
 image: "/images/svg/ai-smart-actions.svg"

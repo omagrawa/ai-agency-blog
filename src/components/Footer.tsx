@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <Link to="/" className="text-xl font-bold text-gray-900 dark:text-white">
-              SMS Idea
+              Ripple AI
             </Link>
           </div>
           
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           </nav>
           
           <div className="mt-4 md:mt-0 text-sm text-gray-500 dark:text-gray-400">
-            &copy; {currentYear} SMS Idea. All rights reserved.
+            &copy; {currentYear} Ripple AI. All rights reserved.
           </div>
         </div>
       </div>

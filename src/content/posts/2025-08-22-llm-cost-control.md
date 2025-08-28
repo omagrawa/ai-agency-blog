@@ -1,7 +1,7 @@
 ---
 title: "LLM Cost Control: Token Budgets, Caching, and Fallbacks"
 date: 2025-08-22
-author: "SMS Idea Team"
+author: "Ripple AI Team"
 category: "AI Engineering"
 readTime: "5 min read"
 image: "/images/svg/llm-cost-optimization.svg"
