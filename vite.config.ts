@@ -1,6 +1,7 @@
 /// <reference types="node" />
 
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import react from '@vitejs/plugin-react';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
@@ -33,6 +34,14 @@ export default defineConfig({
   plugins: [
     react(),
     markdownPlugin(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/content/posts/*',
+          dest: 'posts',
+        },
+      ],
+    }),
   ],
   resolve: {
     alias: {
