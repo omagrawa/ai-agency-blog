@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getPostData } from '@/utils/loadPosts';
+import moment from 'moment';
 
 interface BlogPostProps {
   title: string;
@@ -104,7 +105,7 @@ const BlogPostPage: React.FC = () => {
           </Link>
           
           <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-            <span>{post.date}</span>
+            <span>{moment(post.date).format("DD-MM-YYYY")}</span>
             {post.readTime && (
               <>
                 <span className="mx-2">•</span>
