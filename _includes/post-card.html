@@ -1,7 +1,0 @@
-<article class="card">
-  <a href="{{ post.url | relative_url }}" class="card-link">
-    <h3 class="card-title">{{ post.title }}</h3>
-    <p class="card-meta">{{ post.date | date: '%b %d, %Y' }} • {% if post.tags %}{{ post.tags | join: ', ' }}{% endif %}</p>
-    <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
-  </a>
-</article>
