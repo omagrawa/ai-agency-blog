@@ -30,7 +30,7 @@ function markdownPlugin() {
 }
 
 export default defineConfig({
-  base: '/',   // ✅ Required for custom domain GitHub Pages
+  base: '/ai-agency-blog/', // <-- set to your repo name, with leading/trailing slash
   plugins: [
     react(),
     markdownPlugin(),
