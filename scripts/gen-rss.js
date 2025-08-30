@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import glob from "glob";
+import { globSync } from "glob";
 import matter from "gray-matter";
 import RSS from "rss";
 import { fileURLToPath } from "url";
@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const postsDir = path.join(__dirname, "../src/content/posts");
-const files = glob.sync("*.md", { cwd: postsDir });
+const files = globSync("*.md", { cwd: postsDir });
 
 const posts = files
   .map((file) => {
