@@ -132,13 +132,42 @@ const HomePage: React.FC = () => {
             Let our AI and DevOps experts help you build scalable, intelligent solutions 
             that drive growth and efficiency.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="mailto:contact@aiagency.com" className="btn bg-white text-blue-600 hover:bg-gray-100">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+            <a href="mailto:ankit@crimsonbeans.com" className="btn bg-white text-blue-600 hover:bg-gray-100">
               Get Started Today
             </a>
             <Link to="/blog" className="btn btn-outline border-white text-white hover:bg-white hover:text-blue-600">
               Learn More
             </Link>
+          </div>
+          
+          {/* Contact Information */}
+          <div className="mt-8 pt-8 border-t border-white/20">
+            <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+              <div>
+                <p className="font-medium mb-1">Email</p>
+                <a href="mailto:ankit@crimsonbeans.com" className="hover:underline">
+                  ankit@crimsonbeans.com
+                </a>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Phone</p>
+                <a href="tel:+4407733512058" className="hover:underline">
+                  +44 07733512058
+                </a>
+              </div>
+              <div>
+                <p className="font-medium mb-1">Address</p>
+                <p>33 Hanworth Road<br />Sunbury on Thames<br />TW16 5DA, U.K.</p>
+              </div>
+              <div>
+                <p className="font-medium mb-1">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/cbankit/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  @cbankit
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

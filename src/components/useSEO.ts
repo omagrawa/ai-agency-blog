@@ -16,6 +16,7 @@ type SEOProps = {
 const DEFAULT_IMAGE = "https://blog.smsidea.in/images/og-blog.png";
 const SITE_NAME = "AI Agency Blog";
 const SITE_URL = "https://blog.smsidea.in/";
+const DEFAULT_AUTHOR = "Ankit - AI Agency";
 
 export function useSEO({
   title,
@@ -35,7 +36,7 @@ export function useSEO({
     const metaTags = [
       { name: "description", content: description },
       { name: "keywords", content: keywords || "AI development, DevOps services, artificial intelligence, machine learning, automation, cloud infrastructure, digital transformation" },
-      { name: "author", content: author || "AI Agency" },
+      { name: "author", content: author || DEFAULT_AUTHOR },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:image", content: image || DEFAULT_IMAGE },
@@ -95,7 +96,7 @@ export function useSEO({
         "image": image || DEFAULT_IMAGE,
         "author": {
           "@type": "Organization",
-          "name": author || "AI Agency"
+          "name": author || DEFAULT_AUTHOR
         },
         "publisher": {
           "@type": "Organization",

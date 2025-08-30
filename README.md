@@ -225,7 +225,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For SEO optimization questions or technical support:
 - Create an issue on GitHub
-- Contact: contact@aiagency.com
+- Contact: ankit@crimsonbeans.com
+- Phone: +44 07733512058
+- Address: 33 Hanworth Road, Sunbury on Thames, TW16 5DA, U.K.
+- LinkedIn: [@cbankit](https://www.linkedin.com/in/cbankit/)
 - Documentation: [Link to docs]
 
 ---
