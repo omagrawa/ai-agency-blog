@@ -1,51 +1,45 @@
-import fs from "fs";
-import path from "path";
-import { globSync } from "glob";
-import matter from "gray-matter";
-import { fileURLToPath } from "url";
+import { writeFileSync } from 'fs';
+import { glob } from 'glob';
+import matter from 'gray-matter';
 
-const SITE_URL = "https://blog.smsidea.in";
+const SITE_URL = 'https://blog.smsidea.in';
 
-// __dirname workaround for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Static pages with their priorities
+const staticPages = [
+  { url: '/', priority: '1.0', changefreq: 'daily' },
+  { url: '/blog', priority: '0.9', changefreq: 'daily' },
+];
 
-const postsDir = path.join(__dirname, "../src/content/posts");
-const files = globSync("*.md", { cwd: postsDir });
+function generateSitemap() {
+  const posts = glob.sync('src/content/posts/*.md');
+  
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  ${staticPages.map(page => `
+  <url>
+    <loc>${SITE_URL}${page.url}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>`).join('')}
+  ${posts.map(post => {
+    const fileContent = readFileSync(post, 'utf8');
+    const { data } = matter(fileContent);
+    const slug = post.replace('src/content/posts/', '').replace('.md', '');
+    const lastmod = data.date ? new Date(data.date).toISOString() : new Date().toISOString();
+    
+    return `
+  <url>
+    <loc>${SITE_URL}/blog/${slug}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+  }).join('')}
+</urlset>`;
 
-const urls = [];
-
-for (const file of files) {
-  const filePath = path.join(postsDir, file);
-  const content = fs.readFileSync(filePath, "utf8");
-  const { data } = matter(content);
-
-  // Remove YYYY-MM-DD- prefix from filename for slug
-  const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\.md$/, "");
-  urls.push({
-    loc: `${SITE_URL}/${slug}`,
-    lastmod: data.date ? new Date(data.date).toISOString().split("T")[0] : "",
-  });
+  writeFileSync('public/sitemap.xml', sitemap);
+  console.log('✅ Sitemap generated successfully!');
 }
 
-// Add homepage
-urls.unshift({
-  loc: `${SITE_URL}/`,
-  lastmod: new Date().toISOString().split("T")[0],
-});
-
-const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    (u) => `<url>
-  <loc>${u.loc}</loc>
-  <lastmod>${u.lastmod}</lastmod>
-</url>`
-  )
-  .join("\n")}
-</urlset>
-`;
-
-fs.writeFileSync(path.join(__dirname, "../public/sitemap.xml"), xml.trim() + "\n");
-console.log("✅ Sitemap generated: public/sitemap.xml");
+generateSitemap();
