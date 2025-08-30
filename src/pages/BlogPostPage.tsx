@@ -22,7 +22,7 @@ const BlogPostPage: React.FC = () => {
         // Get related posts from the same category
         const allPosts = getSortedPostsData();
         const related = allPosts
-          .filter(p => p.category === postData.frontmatter.category && p.slug !== slug)
+          .filter(p => p.category === postData.category && p.slug !== slug)
           .slice(0, 3);
         setRelatedPosts(related);
         
@@ -38,16 +38,16 @@ const BlogPostPage: React.FC = () => {
   useEffect(() => {
     if (post) {
       useSEO({
-        title: post.frontmatter.title,
-        description: post.frontmatter.excerpt || post.frontmatter.description,
-        image: post.frontmatter.image || `https://blog.smsidea.in/images/blog/${slug}.png`,
+        title: post.title,
+        description: post.excerpt || post.description,
+        image: post.image || `https://blog.smsidea.in/images/blog/${slug}.png`,
         url: `https://blog.smsidea.in/blog/${slug}`,
         type: 'article',
-        author: post.frontmatter.author || 'AI Agency',
-        publishedTime: post.frontmatter.date,
-        modifiedTime: post.frontmatter.lastModified || post.frontmatter.date,
-        keywords: post.frontmatter.keywords || 'AI development, DevOps, automation, technology',
-        category: post.frontmatter.category
+        author: post.author || 'AI Agency',
+        publishedTime: post.date,
+        modifiedTime: post.lastModified || post.date,
+        keywords: post.keywords || 'AI development, DevOps, automation, technology',
+        category: post.category
       });
     }
   }, [post, slug]);
@@ -87,39 +87,39 @@ const BlogPostPage: React.FC = () => {
         <span className="mx-2">→</span>
         <Link to="/blog" className="hover:text-blue-600">Blog</Link>
         <span className="mx-2">→</span>
-        <span>{post.frontmatter.title}</span>
+        <span>{post.title}</span>
       </nav>
 
       {/* Article Header */}
       <header className="mb-8">
         <div className="mb-4">
           <span className="inline-block px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200">
-            {post.frontmatter.category}
+            {post.category}
           </span>
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-          {post.frontmatter.title}
+          {post.title}
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-          {post.frontmatter.excerpt || post.frontmatter.description}
+          {post.excerpt || post.description}
         </p>
         <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6">
-          <time dateTime={post.frontmatter.date}>
-            {moment(post.frontmatter.date).format("MMMM DD, YYYY")}
+          <time dateTime={post.date}>
+            {moment(post.date).format("MMMM DD, YYYY")}
           </time>
           <span className="mx-2">•</span>
-          <span>{post.frontmatter.readTime || '5 min read'}</span>
-          {post.frontmatter.author && (
+          <span>{post.readTime || '5 min read'}</span>
+          {post.author && (
             <>
               <span className="mx-2">•</span>
-              <span>By {post.frontmatter.author}</span>
+              <span>By {post.author}</span>
             </>
           )}
         </div>
-        {post.frontmatter.image && (
+        {post.image && (
           <img 
-            src={post.frontmatter.image} 
-            alt={post.frontmatter.title}
+            src={post.image} 
+            alt={post.title}
             className="w-full h-64 md:h-96 object-cover rounded-lg mb-8"
           />
         )}
@@ -158,36 +158,36 @@ const BlogPostPage: React.FC = () => {
 
       {/* Article Footer */}
       <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-        <div className="flex flex-wrap gap-2 mb-6">
-          {post.frontmatter.tags?.map((tag: string, index: number) => (
-            <span 
-              key={index}
-              className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
-        
-        <div className="flex justify-between items-center">
-          <Link to="/blog" className="text-blue-600 hover:text-blue-800 font-medium">
-            ← Back to Blog
-          </Link>
-          <div className="flex space-x-4">
-            <button 
-              onClick={() => window.print()}
-              className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
-            >
-              📄 Print
-            </button>
-            <button 
-              onClick={() => navigator.share?.({ title: post.frontmatter.title, url: window.location.href })}
-              className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
-            >
-              📤 Share
-            </button>
-          </div>
-        </div>
+                 <div className="flex flex-wrap gap-2 mb-6">
+           {post.tags?.map((tag: string, index: number) => (
+             <span 
+               key={index}
+               className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+             >
+               #{tag}
+             </span>
+           ))}
+         </div>
+         
+         <div className="flex justify-between items-center">
+           <Link to="/blog" className="text-blue-600 hover:text-blue-800 font-medium">
+             ← Back to Blog
+           </Link>
+           <div className="flex space-x-4">
+             <button 
+               onClick={() => window.print()}
+               className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+             >
+               📄 Print
+             </button>
+             <button 
+               onClick={() => navigator.share?.({ title: post.title, url: window.location.href })}
+               className="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+             >
+               📤 Share
+             </button>
+           </div>
+         </div>
       </footer>
 
       {/* Related Posts */}
