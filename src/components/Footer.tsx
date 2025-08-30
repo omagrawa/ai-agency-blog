@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">AI Agency</h3>
-            <p className="text-gray-300 mb-4">
+            <h3 className="text-xl font-bold mb-4 text-white">AI Agency</h3>
+            <p className="text-gray-200 mb-4">
               Leading AI development and DevOps automation services. We help businesses 
               leverage cutting-edge technology for competitive advantage.
             </p>
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/cbankit/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors"
+                className="text-gray-200 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -30,30 +30,30 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li><Link to="/blog" className="hover:text-white transition-colors">AI Development</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition-colors">DevOps Automation</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition-colors">Digital Transformation</Link></li>
-              <li><Link to="/blog" className="hover:text-white transition-colors">Cloud Infrastructure</Link></li>
+            <h4 className="text-lg font-semibold mb-4 text-white">Services</h4>
+            <ul className="space-y-2">
+              <li><Link to="/blog" className="text-gray-200 hover:text-white transition-colors">AI Development</Link></li>
+              <li><Link to="/blog" className="text-gray-200 hover:text-white transition-colors">DevOps Automation</Link></li>
+              <li><Link to="/blog" className="text-gray-200 hover:text-white transition-colors">Digital Transformation</Link></li>
+              <li><Link to="/blog" className="text-gray-200 hover:text-white transition-colors">Cloud Infrastructure</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-gray-300">
+            <h4 className="text-lg font-semibold mb-4 text-white">Contact</h4>
+            <div className="space-y-2">
               <div>
-                <a href="mailto:ankit@crimsonbeans.com" className="hover:text-white transition-colors">
+                <a href="mailto:ankit@crimsonbeans.com" className="text-gray-200 hover:text-white transition-colors">
                   ankit@crimsonbeans.com
                 </a>
               </div>
               <div>
-                <a href="tel:+4407733512058" className="hover:text-white transition-colors">
+                <a href="tel:+4407733512058" className="text-gray-200 hover:text-white transition-colors">
                   +44 07733512058
                 </a>
               </div>
-              <div className="text-sm">
+              <div className="text-sm text-gray-200">
                 33 Hanworth Road<br />
                 Sunbury on Thames<br />
                 TW16 5DA, U.K.
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
           <p>&copy; 2025 AI Agency. All rights reserved.</p>
         </div>
       </div>
