@@ -61,6 +61,14 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     cssMinify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+        },
+      },
+    },
   },
   define: {
     'process.env': {}
