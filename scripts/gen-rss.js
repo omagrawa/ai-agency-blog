@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { globSync } from "glob";
+import { glob } from "glob";
 import matter from "gray-matter";
 import RSS from "rss";
 import { fileURLToPath } from "url";
@@ -12,7 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const postsDir = path.join(__dirname, "../src/content/posts");
-const files = globSync("*.md", { cwd: postsDir });
+const files = await glob("*.md", { cwd: postsDir });
 
 const posts = files
   .map((file) => {
@@ -23,7 +23,7 @@ const posts = files
     return {
       ...data,
       slug,
-      url: `${SITE_URL}/${slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       body,
     };
   })
@@ -32,23 +32,26 @@ const posts = files
 
 const feed = new RSS({
   title: "AI Agency Blog",
-  description: "Insights, guides, and news from the AI Agency team.",
+  description: "Expert insights on AI development, DevOps automation, and digital transformation. Leading AI Agency providing cutting-edge technology solutions.",
   feed_url: FEED_URL,
   site_url: SITE_URL,
   image_url: `${SITE_URL}/images/og-blog.png`,
   language: "en",
+  pubDate: new Date().toUTCString(),
+  ttl: 60,
 });
 
 posts.forEach((post) => {
   feed.item({
     title: post.title,
-    description: post.excerpt,
+    description: post.excerpt || post.description,
     url: post.url,
     guid: post.url,
     date: post.date,
-    author: post.author,
+    author: post.author || "AI Agency",
+    categories: [post.category],
     enclosure: post.image
-      ? { url: post.image }
+      ? { url: `${SITE_URL}/images/blog/${post.slug}.png` }
       : { url: `${SITE_URL}/images/og-blog.png` },
   });
 });

@@ -1,6 +1,7 @@
 import { writeFileSync, readFileSync } from 'fs';
 import { glob } from 'glob';
 import matter from 'gray-matter';
+import path from 'path';
 
 const SITE_URL = 'https://blog.smsidea.in';
 
@@ -10,8 +11,8 @@ const staticPages = [
   { url: '/blog', priority: '0.9', changefreq: 'daily' },
 ];
 
-function generateSitemap() {
-  const posts = glob.sync('src/content/posts/*.md');
+async function generateSitemap() {
+  const posts = await glob('src/content/posts/*.md');
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -25,7 +26,9 @@ function generateSitemap() {
   ${posts.map(post => {
     const fileContent = readFileSync(post, 'utf8');
     const { data } = matter(fileContent);
-    const slug = post.replace('src/content/posts/', '').replace('.md', '');
+    // Extract slug from filename (remove date prefix and .md extension)
+    const filename = path.basename(post);
+    const slug = filename.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
     const lastmod = data.date ? new Date(data.date).toISOString() : new Date().toISOString();
     
     return `
