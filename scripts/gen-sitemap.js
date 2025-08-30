@@ -1,16 +1,21 @@
-const fs = require("fs");
-const path = require("path");
-const glob = require("glob");
-const matter = require("gray-matter");
+import fs from "fs";
+import path from "path";
+import glob from "glob";
+import matter from "gray-matter";
+import { fileURLToPath } from "url";
 
 const SITE_URL = "https://blog.smsidea.in";
+
+// __dirname workaround for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const postsDir = path.join(__dirname, "../src/content/posts");
 const files = glob.sync("*.md", { cwd: postsDir });
 
 const urls = [];
 
-files.forEach((file) => {
+for (const file of files) {
   const filePath = path.join(postsDir, file);
   const content = fs.readFileSync(filePath, "utf8");
   const { data } = matter(content);
@@ -21,7 +26,7 @@ files.forEach((file) => {
     loc: `${SITE_URL}/${slug}`,
     lastmod: data.date ? new Date(data.date).toISOString().split("T")[0] : "",
   });
-});
+}
 
 // Add homepage
 urls.unshift({

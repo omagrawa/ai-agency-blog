@@ -1,11 +1,15 @@
-const fs = require("fs");
-const path = require("path");
-const glob = require("glob");
-const matter = require("gray-matter");
-const RSS = require("rss");
+import fs from "fs";
+import path from "path";
+import glob from "glob";
+import matter from "gray-matter";
+import RSS from "rss";
+import { fileURLToPath } from "url";
 
 const SITE_URL = "https://blog.smsidea.in";
 const FEED_URL = `${SITE_URL}/rss.xml`;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const postsDir = path.join(__dirname, "../src/content/posts");
 const files = glob.sync("*.md", { cwd: postsDir });
