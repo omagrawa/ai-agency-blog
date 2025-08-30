@@ -1,72 +1,69 @@
-// Modern, vibrant color system with HSL for better theming and dark mode
+// Professional color system with sophisticated slate-based theme
 :root {
-  // Base colors in HSL format - vibrant and modern
-  --color-primary: 244, 83%, 68%;  // Bright purple
-  --color-secondary: 42, 100%, 70%;  // Soft gold
-  --color-success: 160, 89%, 45%;  // Teal
-  --color-warning: 35, 100%, 65%;  // Amber
-  --color-error: 0, 91%, 71%;     // Soft red
-  --color-info: 199, 98%, 60%;    // Sky blue
-  --color-accent: 321, 85%, 70%;  // Pink accent
+  // Primary brand colors - professional and modern
+  --color-primary: 220, 13%, 18%;  // Dark slate for primary elements
+  --color-secondary: 220, 9%, 46%;  // Medium slate for secondary elements
+  --color-accent: 210, 100%, 50%;   // Professional blue accent
+  --color-success: 160, 84%, 39%;   // Professional green
+  --color-warning: 38, 92%, 50%;    // Professional amber
+  --color-error: 0, 84%, 60%;       // Professional red
   
-  // Light theme - clean and airy
-  --color-text: 240, 10%, 15%;     // Near black
-  --color-text-light: 240, 5%, 45%; // Soft gray
-  --color-bg: 0, 0%, 100%;         // Pure white
-  --color-bg-secondary: 240, 20%, 98%;  // Slightly off-white
-  --color-border: 240, 20%, 90%;   // Very light gray
-  --color-card: 0, 0%, 100%;       // White cards
+  // Light theme - clean and professional
+  --color-text: 220, 13%, 18%;      // Dark slate for text
+  --color-text-light: 220, 9%, 46%; // Medium slate for secondary text
+  --color-bg: 0, 0%, 100%;          // Pure white background
+  --color-bg-secondary: 220, 14%, 96%; // Very light slate
+  --color-border: 220, 13%, 91%;    // Light slate borders
+  --color-card: 0, 0%, 100%;        // White cards
   
-  // Fallback colors for better compatibility
-  --fallback-text: #1a1a1a;
-  --fallback-bg: #ffffff;
-  
-  // Modern shadows with subtle color tint
-  --shadow-sm: 0 1px 3px 0 hsla(var(--color-primary) / 0.1), 0 1px 2px -1px hsla(var(--color-primary) / 0.1);
-  --shadow: 0 4px 6px -1px hsla(var(--color-primary) / 0.1), 0 2px 4px -2px hsla(var(--color-primary) / 0.1);
-  --shadow-md: 0 10px 15px -3px hsla(var(--color-primary) / 0.1), 0 4px 6px -4px hsla(var(--color-primary) / 0.1);
-  --shadow-lg: 0 20px 25px -5px hsla(var(--color-primary) / 0.1), 0 8px 10px -6px hsla(var(--color-primary) / 0.1);
+  // Professional shadows with subtle color tint
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
   
   // Border radius
   --radius-sm: 0.375rem;
   --radius: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-full: 9999px;
+  
+  // Fallback colors for better compatibility
+  --fallback-text: #1e293b;
+  --fallback-bg: #ffffff;
 }
 
-// Dark theme overrides - rich and deep
+// Dark theme overrides - sophisticated and professional
 .dark {
   // Text colors
-  --color-text: 240, 10%, 98%;     // Off-white for better readability
-  --color-text-light: 240, 5%, 75%; // Lighter gray for secondary text
+  --color-text: 220, 14%, 96%;      // Light slate for text
+  --color-text-light: 220, 9%, 64%; // Medium light slate for secondary text
   
-  // Background colors - deep dark with a hint of blue
-  --color-bg: 240, 15%, 8%;        // Deep dark blue-black
-  --color-bg-secondary: 240, 15%, 12%; // Slightly lighter than bg
-  --color-border: 240, 15%, 25%;   // Subtle borders
-  --color-card: 240, 15%, 10%;     // Slightly lighter than bg for cards
+  // Background colors - sophisticated dark slate
+  --color-bg: 220, 13%, 18%;        // Dark slate background
+  --color-bg-secondary: 220, 13%, 22%; // Slightly lighter slate
+  --color-border: 220, 13%, 25%;    // Medium slate borders
+  --color-card: 220, 13%, 20%;      // Card background
+  
+  // Enhanced colors in dark mode
+  --color-primary: 210, 100%, 50%;  // Bright blue for primary
+  --color-secondary: 220, 9%, 64%;  // Light slate for secondary
+  --color-accent: 210, 100%, 60%;   // Bright blue accent
+  --color-success: 160, 84%, 45%;   // Bright green
+  --color-warning: 38, 92%, 55%;    // Bright amber
+  --color-error: 0, 84%, 65%;       // Bright red
+  
+  // Dark mode shadows - more pronounced
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
   
   // Fallback colors for dark mode
-  --fallback-text: #f8f9fa;
-  --fallback-bg: #1a1a1a;
-  
-  // More vibrant colors in dark mode for better contrast
-  --color-primary: 244, 83%, 73%;  // Brighter purple
-  --color-secondary: 42, 100%, 75%; // Brighter gold
-  --color-success: 160, 89%, 50%;  // Brighter teal
-  --color-warning: 35, 100%, 70%;  // Brighter amber
-  --color-error: 0, 91%, 76%;      // Brighter red
-  --color-info: 199, 98%, 65%;     // Brighter sky blue
-  --color-accent: 321, 85%, 75%;   // Brighter pink accent
-  
-  // Dark mode shadows - more pronounced with color tint
-  --shadow-sm: 0 1px 3px 0 hsla(0, 0%, 0%, 0.4), 0 1px 2px -1px hsla(0, 0%, 0%, 0.4);
-  --shadow: 0 4px 6px -1px hsla(0, 0%, 0%, 0.3), 0 2px 4px -2px hsla(0, 0%, 0%, 0.3);
-  --shadow-md: 0 10px 15px -3px hsla(0, 0%, 0%, 0.25), 0 4px 6px -4px hsla(0, 0%, 0%, 0.25);
-  --shadow-lg: 0 20px 25px -5px hsla(0, 0%, 0%, 0.2), 0 8px 10px -6px hsla(0, 0%, 0%, 0.2);
-  
-  // Add a subtle glow effect to interactive elements
-  --glow: 0 0 10px hsla(var(--color-primary) / 0.2);
+  --fallback-text: #f1f5f9;
+  --fallback-bg: #1e293b;
 }
 
 // Modern base styles with improved typography and smooth transitions

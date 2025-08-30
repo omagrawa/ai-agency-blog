@@ -26,20 +26,20 @@ const HomePage: React.FC = () => {
   return (
     <div className="fade-in">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-slate-50">
             AI & DevOps Development Services
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8">
             Expert AI development, DevOps automation, and digital transformation services. 
             We help businesses leverage cutting-edge technology for competitive advantage.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/blog" className="btn bg-black">
+            <Link to="/blog" className="btn bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200">
               Read Our Insights
             </Link>
-            <a href="#services" className="btn btn-outline">
+            <a href="#services" className="btn btn-outline border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800">
               Our Services
             </a>
           </div>
@@ -47,32 +47,32 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 bg-white dark:bg-gray-900">
+      <section id="services" className="py-16 bg-white dark:bg-slate-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-slate-50">
             Our AI & DevOps Services
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card p-6 h-full">
-              <div className="text-blue-600 text-3xl mb-4">🤖</div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">AI Development</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+            <div className="card p-6 h-full border border-slate-200 dark:border-slate-700">
+              <div className="text-slate-600 dark:text-slate-400 text-3xl mb-4">🤖</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-50">AI Development</h3>
+              <p className="text-slate-600 dark:text-slate-300">
                 Custom AI solutions, machine learning models, and intelligent automation systems 
                 tailored to your business needs.
               </p>
             </div>
-            <div className="card p-6 h-full">
-              <div className="text-blue-600 text-3xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">DevOps Automation</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+            <div className="card p-6 h-full border border-slate-200 dark:border-slate-700">
+              <div className="text-slate-600 dark:text-slate-400 text-3xl mb-4">⚡</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-50">DevOps Automation</h3>
+              <p className="text-slate-600 dark:text-slate-300">
                 CI/CD pipelines, infrastructure as code, cloud deployment, and automated 
                 testing for faster, reliable software delivery.
               </p>
             </div>
-            <div className="card p-6 h-full">
-              <div className="text-blue-600 text-3xl mb-4">🚀</div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Digital Transformation</h3>
-              <p className="text-gray-600 dark:text-gray-300">
+            <div className="card p-6 h-full border border-slate-200 dark:border-slate-700">
+              <div className="text-slate-600 dark:text-slate-400 text-3xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-slate-50">Digital Transformation</h3>
+              <p className="text-slate-600 dark:text-slate-300">
                 End-to-end digital transformation consulting, helping businesses modernize 
                 their technology stack and processes.
               </p>
@@ -82,29 +82,29 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* Featured Posts */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-slate-50 dark:bg-slate-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-bold text-center mb-4 text-slate-900 dark:text-slate-50">
             Latest AI & DevOps Insights
           </h2>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-slate-600 dark:text-slate-300 mb-12 max-w-2xl mx-auto">
             Stay updated with the latest trends, best practices, and expert insights in AI development and DevOps automation.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.slice(0, 6).map((post, index) => (
               <article key={index} className="group">
                 <Link to={`/blog/${post.slug}`} className="block">
-                  <div className="card p-6 h-full transition-all duration-300 hover:shadow-lg dark:hover:bg-gray-700">
-                    <span className="inline-block px-3 py-1 text-sm font-medium text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-200 mb-4">
+                  <div className="card p-6 h-full transition-all duration-300 hover:shadow-lg border border-slate-200 dark:border-slate-700 dark:hover:bg-slate-700">
+                    <span className="inline-block px-3 py-1 text-sm font-medium text-slate-700 bg-slate-100 rounded-full dark:bg-slate-600 dark:text-slate-200 mb-4">
                       {post.category}
                     </span>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-slate-600 dark:group-hover:text-slate-300 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                    <p className="text-slate-600 dark:text-slate-300 mb-4">
                       {post.excerpt}
                     </p>
-                    <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mt-auto">
+                    <div className="flex items-center text-sm text-slate-500 dark:text-slate-400 mt-auto">
                       <time dateTime={post.date}>{moment(post.date).format("DD-MM-YYYY")}</time>
                       <span className="mx-2">•</span>
                       <span>{post.readTime} read</span>
@@ -115,7 +115,7 @@ const HomePage: React.FC = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link to="/blog" className="btn btn-outline">
+            <Link to="/blog" className="btn btn-outline border-slate-300 text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800">
               View All Articles
             </Link>
           </div>
@@ -123,47 +123,47 @@ const HomePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-slate-900 text-slate-100">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-slate-300">
             Let our AI and DevOps experts help you build scalable, intelligent solutions 
             that drive growth and efficiency.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <a href="mailto:ankit@crimsonbeans.com" className="btn bg-white text-blue-600 hover:bg-gray-100">
+            <a href="mailto:ankit@crimsonbeans.com" className="btn bg-slate-100 text-slate-900 hover:bg-slate-200">
               Get Started Today
             </a>
-            <Link to="/blog" className="btn btn-outline border-white text-white hover:bg-white hover:text-blue-600">
+            <Link to="/blog" className="btn btn-outline border-slate-300 text-slate-100 hover:bg-slate-800">
               Learn More
             </Link>
           </div>
           
           {/* Contact Information */}
-          <div className="mt-8 pt-8 border-t border-white/20">
+          <div className="mt-8 pt-8 border-t border-slate-700">
             <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
               <div>
-                <p className="font-medium mb-1">Email</p>
-                <a href="mailto:ankit@crimsonbeans.com" className="hover:underline">
+                <p className="font-medium mb-1 text-slate-200">Email</p>
+                <a href="mailto:ankit@crimsonbeans.com" className="text-slate-300 hover:text-slate-100 transition-colors">
                   ankit@crimsonbeans.com
                 </a>
               </div>
               <div>
-                <p className="font-medium mb-1">Phone</p>
-                <a href="tel:+4407733512058" className="hover:underline">
+                <p className="font-medium mb-1 text-slate-200">Phone</p>
+                <a href="tel:+4407733512058" className="text-slate-300 hover:text-slate-100 transition-colors">
                   +44 07733512058
                 </a>
               </div>
               <div>
-                <p className="font-medium mb-1">Address</p>
-                <p>33 Hanworth Road<br />Sunbury on Thames<br />TW16 5DA, U.K.</p>
+                <p className="font-medium mb-1 text-slate-200">Address</p>
+                <p className="text-slate-300">33 Hanworth Road<br />Sunbury on Thames<br />TW16 5DA, U.K.</p>
               </div>
               <div>
-                <p className="font-medium mb-1">LinkedIn</p>
-                <a href="https://www.linkedin.com/in/cbankit/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <p className="font-medium mb-1 text-slate-200">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/cbankit/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-100 transition-colors">
                   @cbankit
                 </a>
               </div>
