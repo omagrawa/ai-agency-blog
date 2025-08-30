@@ -13,6 +13,20 @@ const BlogPostPage: React.FC = () => {
   const [relatedPosts, setRelatedPosts] = useState<PostMetadata[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // SEO optimization for blog post - called at top level
+  useSEO({
+    title: post?.title || 'Blog Post',
+    description: post?.excerpt || post?.description || 'AI and DevOps insights',
+    image: post?.image || `https://blog.smsidea.in/images/blog/${slug}.png`,
+    url: `https://blog.smsidea.in/blog/${slug}`,
+    type: 'article',
+    author: post?.author || 'AI Agency',
+    publishedTime: post?.date,
+    modifiedTime: post?.lastModified || post?.date,
+    keywords: post?.keywords || 'AI development, DevOps, automation, technology',
+    category: post?.category
+  });
+
   useEffect(() => {
     if (slug) {
       try {
@@ -34,23 +48,7 @@ const BlogPostPage: React.FC = () => {
     }
   }, [slug]);
 
-  // SEO optimization for blog post
-  useEffect(() => {
-    if (post) {
-      useSEO({
-        title: post.title,
-        description: post.excerpt || post.description,
-        image: post.image || `https://blog.smsidea.in/images/blog/${slug}.png`,
-        url: `https://blog.smsidea.in/blog/${slug}`,
-        type: 'article',
-        author: post.author || 'AI Agency',
-        publishedTime: post.date,
-        modifiedTime: post.lastModified || post.date,
-        keywords: post.keywords || 'AI development, DevOps, automation, technology',
-        category: post.category
-      });
-    }
-  }, [post, slug]);
+
 
   if (loading) {
     return (
