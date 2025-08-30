@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="md:col-span-2">
             <h3 className="text-xl font-bold mb-4 text-slate-50">AI Agency</h3>
-            <p className="text-slate-300 mb-4 leading-relaxed">
+            <p className="text-slate-300 hover:text-slate-50 transition-colors duration-200" >
               Leading AI development and DevOps automation services. We help businesses 
               leverage cutting-edge technology for competitive advantage.
             </p>
