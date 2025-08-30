@@ -122,55 +122,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-slate-900 text-slate-100">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-slate-300">
-            Let our AI and DevOps experts help you build scalable, intelligent solutions 
-            that drive growth and efficiency.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <a href="mailto:ankit@crimsonbeans.com" className="btn bg-slate-100 text-slate-900 hover:bg-slate-200">
-              Get Started Today
-            </a>
-            <Link to="/blog" className="btn btn-outline border-slate-300 text-slate-100 hover:bg-slate-800">
-              Learn More
-            </Link>
-          </div>
-          
-          {/* Contact Information */}
-          <div className="mt-8 pt-8 border-t border-slate-700">
-            <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
-              <div>
-                <p className="font-medium mb-1 text-slate-200">Email</p>
-                <a href="mailto:ankit@crimsonbeans.com" className="text-slate-300 hover:text-slate-100 transition-colors">
-                  ankit@crimsonbeans.com
-                </a>
-              </div>
-              <div>
-                <p className="font-medium mb-1 text-slate-200">Phone</p>
-                <a href="tel:+4407733512058" className="text-slate-300 hover:text-slate-100 transition-colors">
-                  +44 07733512058
-                </a>
-              </div>
-              <div>
-                <p className="font-medium mb-1 text-slate-200">Address</p>
-                <p className="text-slate-300">33 Hanworth Road<br />Sunbury on Thames<br />TW16 5DA, U.K.</p>
-              </div>
-              <div>
-                <p className="font-medium mb-1 text-slate-200">LinkedIn</p>
-                <a href="https://www.linkedin.com/in/cbankit/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-slate-100 transition-colors">
-                  @cbankit
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    
     </div>
   );
 };
