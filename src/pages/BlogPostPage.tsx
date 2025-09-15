@@ -156,16 +156,16 @@ const BlogPostPage: React.FC = () => {
 
       {/* Article Footer */}
       <footer className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
-                 <div className="flex flex-wrap gap-2 mb-6">
-           {post.tags?.map((tag: string, index: number) => (
-             <span 
-               key={index}
-               className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
-             >
-               #{tag}
-             </span>
-           ))}
-         </div>
+        <div className="flex flex-wrap gap-2 mb-6">
+          {(Array.isArray(post.tags) ? post.tags : []).map((tag: string, index: number) => (
+            <span 
+              key={index}
+              className="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
          
          <div className="flex justify-between items-center">
            <Link to="/blog" className="text-blue-600 hover:text-blue-800 font-medium">
