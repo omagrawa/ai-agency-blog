@@ -30,7 +30,7 @@ function markdownPlugin() {
 }
 
 export default defineConfig({
-  base: '/ai-agency-blog/', // <-- set to root for custom domain
+  base: '/', // custom domain uses root; ensures correct asset paths on GitHub Pages
   plugins: [
     react(),
     markdownPlugin(),
