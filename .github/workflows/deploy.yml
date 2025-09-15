@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: read         # least-privilege for the build job
+  contents: read
   pages: write
   id-token: write
 
@@ -30,17 +30,18 @@ jobs:
       - name: Install deps
         run: npm ci --no-audit --no-fund
 
+      # 🔑 For project sites (https://<user>.github.io/<repo>/) build with /<repo>/ base
+      # If you're using a custom domain or a user/org site, change to: npx vite build --base="/"
       - name: Build (includes sitemap & RSS)
-        run: npm run build
+        run: npx vite build --base="/${{ github.event.repository.name }}/"
 
-      - name: Pages essentials (.nojekyll + SPA 404)
+      # GitHub Pages essentials
+      - name: Add .nojekyll and SPA fallback
         run: |
           touch dist/.nojekyll
-          # If using client-side routing (React Router), keep this:
           cp dist/index.html dist/404.html || true
 
       - name: Upload build artifacts
-        # v3 is the current stable for the upload action
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
