@@ -30,7 +30,7 @@ function markdownPlugin() {
 }
 
 export default defineConfig({
-  base: '/ai-agency-blog/',
+  base: '/', // <-- set to root for custom domain
   plugins: [
     react(),
     markdownPlugin(),
