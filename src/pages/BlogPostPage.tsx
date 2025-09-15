@@ -127,7 +127,7 @@ const BlogPostPage: React.FC = () => {
       <div className="prose prose-lg max-w-none dark:prose-invert">
         <ReactMarkdown 
           remarkPlugins={[remarkGfm]}
-          rehypePlugins={[rehypeHighlight]}
+          rehypePlugins={[rehypeHighlight, require('rehype-raw')]}
           components={{
             h1: ({node, ...props}) => <h1 className="text-3xl font-bold mb-6" {...props} />,
             h2: ({node, ...props}) => <h2 className="text-2xl font-bold mb-4 mt-8" {...props} />,
