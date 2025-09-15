@@ -22,9 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Clean install (remove lock and node_modules)
-        run: rm -rf node_modules package-lock.json
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
