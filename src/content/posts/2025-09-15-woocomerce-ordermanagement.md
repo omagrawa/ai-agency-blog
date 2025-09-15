@@ -7,9 +7,9 @@ author: "Ripple AI Team"
 category: "Automation Engineering"
 readTime: "6 min read"
 image: "/images/blog/woocommerce-asana-automation.png"
-tags: \["woocommerce", "asana", "automation", "n8n", "zapier", "devops"]
+tags: ["woocommerce", "asana", "automation", "n8n", "zapier", "devops"]
 excerpt: "Turn every WooCommerce order item into a fully populated Asana project—with idempotent processing, template-driven tasks, portfolio assignment, and safe customer tracking links."
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---
 
 <div class="post-intro">
   <p class="drop-cap">If your team still copies order details into Asana by hand, you're leaking time and risking errors. This field-tested playbook shows how to convert paid WooCommerce orders into production-grade Asana projects—reliably, idempotently, and with customer-safe progress tracking.</p>
